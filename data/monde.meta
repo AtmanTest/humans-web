@@ -1,0 +1,8 @@
+pop	2026-11-11	SP.POP.TOTL 2025
+morts	2026-11-11	SP.DYN.CDRT.IN 2023
+guerre	2026-11-11	VC.BTL.DETH 2023
+total_pop	8215424893	monde WLD
+total_morts	61189945	morts = pop 2023 x taux 2023
+total_guerre	128911	somme des pays (UCDP/PRIO)
+source	Banque mondiale — https://api.worldbank.org/v2
+note	morts = population 2023 x taux brut 2023 / 1000 ; guerre : UCDP/PRIO

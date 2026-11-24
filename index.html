@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HUMANS — le monde en direct</title>
+<meta name="description" content="Population, morts et morts de guerre, pays par pays. Sources officielles : Banque mondiale, UCDP/PRIO.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%2305060a'/><circle cx='16' cy='16' r='9' fill='none' stroke='%23ff9e1f' stroke-width='2'/></svg>">
+</head>
+<body>
+<header>
+  <div class="marque">
+    <span class="titre">HUMANS</span>
+    <span class="ver" id="ver">web</span>
+  </div>
+  <div class="heure" id="heure">--:--:--</div>
+  <div class="ticker" id="ticker">chargement…</div>
+</header>
+
+<main>
+    <article class="panneau" id="p-pop">
+      <div class="entete"><h2>(1) HABITANTS</h2><span class="an" id="an-pop">2025</span></div>
+      <div class="total" id="tot-pop">n.d.</div>
+      <div class="sous" id="sous-pop">habitants (2025)</div>
+      <div class="liste" id="liste-pop"></div>
+      <div class="source">Banque mondiale · SP.POP.TOTL, 2025</div>
+    </article>
+
+    <article class="panneau" id="p-morts">
+      <div class="entete"><h2>(2) MORTS</h2><span class="an" id="an-morts">2023</span></div>
+      <div class="total" id="tot-morts">n.d.</div>
+      <div class="sous" id="sous-morts">morts/an (2023)</div>
+      <div class="liste" id="liste-morts"></div>
+      <div class="source">Banque mondiale · SP.POP.TOTL + SP.DYN.CDRT.IN, 2023</div>
+    </article>
+
+  <article class="panneau carte" id="p-carte">
+    <div class="entete">
+      <h2>(5) CARTE // LE MONDE</h2>
+      <span class="an modes" id="modes">
+        <button data-mode="0" class="actif">population</button>
+        <button data-mode="1">morts/an</button>
+        <button data-mode="2">guerres</button>
+      </span>
+    </div>
+    <div class="toile">
+      <canvas id="monde"></canvas>
+      <div class="bulle-info" id="infobulle" hidden></div>
+    </div>
+    <div class="legende" id="legende">population</div>
+    <div class="source">Natural Earth (domaine public) · projection Equal Earth · Banque mondiale</div>
+  </article>
+
+  <article class="panneau" id="p-guerres">
+    <div class="entete"><h2>(3) GUERRES</h2><span class="an" id="an-guerres">UCDP</span></div>
+    <div class="total rouge" id="tot-guerres">n.d.</div>
+    <div class="sous" id="sous-guerres">morts de guerre</div>
+    <div class="liste" id="liste-guerres"></div>
+    <div class="source">Banque mondiale · VC.BTL.DETH, source UCDP/PRIO</div>
+  </article>
+
+  <article class="panneau" id="p-machine">
+    <div class="entete"><h2>(4) MACHINE</h2><span class="an">poste</span></div>
+    <div class="total" id="tot-machine">n.d.</div>
+    <div class="sous">la version web ne lit pas le poste</div>
+    <p class="note" id="note-machine">
+      CPU et RAM se lisent dans /proc : c'est le travail de l'application de
+      bureau, pas d'une page hébergée. Ici, aucune valeur n'est inventée.
+    </p>
+    <div class="source">/proc/stat · /proc/meminfo — application de bureau</div>
+  </article>
+
+  <article class="panneau" id="p-sources">
+    <div class="entete"><h2>SOURCES</h2><span class="an" id="an-sources">édition</span></div>
+    <div class="sources" id="liste-sources"></div>
+  </article>
+</main>
+
+<footer>
+  <span>HUMANS · version web · données Banque mondiale + UCDP/PRIO + Natural Earth</span>
+  <span id="pied-date"></span>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
